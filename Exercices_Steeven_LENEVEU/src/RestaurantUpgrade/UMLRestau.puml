@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Personnel
+class Commis
+class Serveur
+class Chef
+class Menu
+class Plat
+class Client
+class Table
+class Commande
+class Facture
+
+Personnel <|-- Commis
+Personnel <|-- Chef
+Personnel <|-- Serveur
+
+Commande <|-- Plat
+
+class Personnel
+{
+    Personnel[] employes
+    nom : String
+    prenom : String
+    surnom : String
+    anciennete : integer
+    eType : eType
+    public abstract eType GetType();
+    public function TravailPersonnel(eType eType);
+
+}
+
+enum eType
+{
+    Commis,
+    Chef,
+    Serveur
+}
+enum eStatutTable
+{
+     non_commandé,
+     commandé,
+     servi,
+     payé
+}
+class Commis
+{
+
+
+}
+
+class Serveur
+{
+
+
+}
+class Chef
+{
+
+}
+@enduml
